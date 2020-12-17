@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>【学习笔记】JavaScript | luozha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="🌘JavaScript   JS 数据类型  五种可包含值的数据类型：  字符串（string） 数字（number） 布尔（boolean） 对象（object） 函数（function）   三种对象类型：  对象（Object） 日期（Date） 数组（Array）   两种不能包含值的数据类型：  null undefined   注意：  NaN 的数据类型是数值 数组的数据类型是对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】JavaScript">
+<meta property="og:url" content="http://www.daluozha.cn/2018/03/28/JavaScript/index.html">
+<meta property="og:site_name" content="luozha">
+<meta property="og:description" content="🌘JavaScript   JS 数据类型  五种可包含值的数据类型：  字符串（string） 数字（number） 布尔（boolean） 对象（object） 函数（function）   三种对象类型：  对象（Object） 日期（Date） 数组（Array）   两种不能包含值的数据类型：  null undefined   注意：  NaN 的数据类型是数值 数组的数据类型是对象">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-12-13T16:01:04.728Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【学习笔记】JavaScript">
+<meta name="twitter:description" content="🌘JavaScript   JS 数据类型  五种可包含值的数据类型：  字符串（string） 数字（number） 布尔（boolean） 对象（object） 函数（function）   三种对象类型：  对象（Object） 日期（Date） 数组（Array）   两种不能包含值的数据类型：  null undefined   注意：  NaN 的数据类型是数值 数组的数据类型是对象">
+  
+  
+    <link rel="icon" href="https://raw.githubusercontent.com/daluozha/MyPostImage/master/fav1.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname"></h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h3 class="article-title" itemprop="name">
+      【学习笔记】JavaScript
+    </h3>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h3 id="javascript"><a class="header-anchor" href="#javascript">🌘</a>JavaScript</h3>
+<ul>
+<li>
+<p>JS 数据类型</p>
+<ul>
+<li>五种可包含值的数据类型：
+<ul>
+<li>字符串（string）</li>
+<li>数字（number）</li>
+<li>布尔（boolean）</li>
+<li>对象（object）</li>
+<li>函数（function）</li>
+</ul>
+</li>
+<li>三种对象类型：
+<ul>
+<li>对象（Object）</li>
+<li>日期（Date）</li>
+<li>数组（Array）</li>
+</ul>
+</li>
+<li>两种不能包含值的数据类型：
+<ul>
+<li>null</li>
+<li>undefined</li>
+</ul>
+</li>
+<li>注意：
+<ul>
+<li>NaN 的数据类型是数值</li>
+<li>数组的数据类型是对象</li>
+<li>日期的数据类型是对象</li>
+<li>null 的数据类型是对象</li>
+<li>未定义变量的数据类型是 undefined</li>
+<li>尚未赋值的变量的数据类型也是 undefined</li>
+<li>无法使用 typeof 去判断 JavaScript 对象是否是数组（或日期），但可以用 constructor 属性返回所有 JavaScript 变量的构造器函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Undefined 与 Null 的区别</p>
+<ul>
+<li>null 和 undefined 的值相等，但类型不等</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typeof undefined              // undefined</span><br><span class="line">typeof null                   // object</span><br><span class="line">null === undefined            // false</span><br><span class="line">null == undefined             // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>布尔值 true &amp; false</p>
+<ul>
+<li>所有具有“真实”值的即为 True ，包括任何（非空）字符串、字符串 ‘false’ 、任何表达式（除了零）</li>
+<li>所有不具有“真实”值的即为 False ，包括0、-0、&quot;&quot;(空值)、undefined、null、false、NaN</li>
+</ul>
+</li>
+<li>
+<p>箭头函数</p>
+<ul>
+<li>箭头函数允许使用简短的语法来编写函数表达式，不需要 function 关键字、return 关键字和花括号。</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">var x = function(x, y) &#123;</span><br><span class="line">return x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ES6</span><br><span class="line">const x = (x, y) =&gt; x * y;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Call &amp; Apply</p>
+<ul>
+<li>
+<p>JavaScript call( ) 方法 可带参数</p>
+<ul>
+<li>call( ) 方法是预定义的 JavaScript 方法。它可以用来调用所有者对象作为参数的方法。通过 call( ) 能够使用属于另一个对象的方法。</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">fullName: function(city, country) &#123;</span><br><span class="line">   return this.firstName + &quot; &quot; + this.lastName + &quot;,&quot; + city + &quot;,&quot; + country;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = &#123;</span><br><span class="line">firstName:&quot;Bill&quot;,</span><br><span class="line">lastName: &quot;Gates&quot;</span><br><span class="line">&#125;</span><br><span class="line">person.fullName.call(person1, &quot;Seattle&quot;, &quot;USA&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>JavaScript apply( ) 方法</p>
+<ul>
+<li>apply( ) 方法与 call( ) 方法不带参数的时候非常相似。 不同之处是call( ) 方法分别接受参数。apply( ) 方法接受数组形式的参数。如果要使用数组而不是参数列表，则 apply( ) 方法非常方便。</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">fullName: function(city, country) &#123;</span><br><span class="line">   return this.firstName + &quot; &quot; + this.lastName + &quot;,&quot; + city + &quot;,&quot; + country;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = &#123;</span><br><span class="line">firstName:&quot;John&quot;,</span><br><span class="line">lastName: &quot;Doe&quot;</span><br><span class="line">&#125;</span><br><span class="line">person.fullName.apply(person1, [&quot;Oslo&quot;, &quot;Norway&quot;]);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>闭包</p>
+<ul>
+<li>闭包是什么：<a href="https://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html</a></li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var add = (function () &#123;</span><br><span class="line">   var counter = 0;</span><br><span class="line">   return function () &#123;return counter += 1;&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">add();</span><br><span class="line">add();</span><br><span class="line">add();</span><br><span class="line"></span><br><span class="line">// 计数器目前是 3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>
+<p>周期性调度方法</p>
+</li>
+</ul>
+<ol>
+<li></li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let timerId = setInverval(()=&gt;alert(&apos;tick&apos;),2000)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>下一次调用在前一次调用完成时再调度</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let timerId = setTimeout(function tick()&#123;</span><br><span class="line">   alert(&apos;tick&apos;)</span><br><span class="line">   timerId = setTimeout(tick,2000)</span><br><span class="line">&#125;,2000)</span><br></pre></td></tr></table></figure>
+<h3 id="新增的数组方法"><a class="header-anchor" href="#新增的数组方法">🌘</a>新增的数组方法</h3>
+<ul>
+<li>forEach</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[].forEach(function(value, index, array) &#123;</span><br><span class="line">   // ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>map</li>
+</ul>
+<blockquote>
+<p>这里的map不是“地图”的意思，而是指“映射”，就是原数组被“映射”成对应新数组（返回值</p>
+</blockquote>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var data = [1, 2, 3, 4];</span><br><span class="line">var arrayOfSquares = data.map(function (item) &#123;</span><br><span class="line">   return item * item;</span><br><span class="line">&#125;);</span><br><span class="line">alert(arrayOfSquares); // 1, 4, 9, 16</span><br></pre></td></tr></table></figure>
+<ul>
+<li>filter</li>
+</ul>
+<blockquote>
+<p>filter为“过滤”、“筛选”之意。指数组filter后，返回过滤后的新数组。<br>
+filter的callback函数需要返回布尔值true或false. 如果为true则表示，恭喜你，通过啦！如果为false, 只能高歌“我只能无情地将你抛弃……”</p>
+</blockquote>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var data = [-1, 0, 1, 2, 3];</span><br><span class="line">var arrayFilter = data.filter(function(item) &#123;</span><br><span class="line">   return item;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(arrayFilter); // [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>some &amp; every</li>
+</ul>
+<blockquote>
+<p>some意指“某些”，指是否“某些项”合乎条件。与下面的every算是好基友，every表示是否“每一项”都要靠谱。</p>
+</blockquote>
+<h3 id="逻辑或-逻辑与"><a class="header-anchor" href="#逻辑或-逻辑与">🌘</a>逻辑或 &amp; 逻辑与</h3>
+<ul>
+<li>由axml的如下代码发掘出：</li>
+</ul>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;tab == 1 &amp;&amp; &apos;active&apos;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>逻辑或（||）总结：只要第一个值的布尔值为 false，那么永远返回第二个值。逻辑或属于短路操作，第一个值为 true 时，不再操作第二个值，且返回第一个值。</p>
+</li>
+<li>
+<p>逻辑与（&amp;&amp;）总结：只要第一个值的布尔值为 true，那么永远返回第二个值。逻辑与属于短路操作，第一个值为 false 时，不再操作第二个值，且返回第一个值。</p>
+</li>
+</ul>
+<h3 id="事件类型"><a class="header-anchor" href="#事件类型">🌘</a>事件类型</h3>
+<ul>
+<li>JavaScript可以处理的事件类型为：鼠标类型、键盘类型和HTML类型！注意：所有的事件处理函数都由两个部分组成，on+事件名称。例如：click事件，处理函数就是onclick！</li>
+</ul>
+<p>第一种：鼠标事件。</p>
+<p>click：单击鼠标按钮时触发；</p>
+<p>dblclick：当用户双击主鼠标按钮时触发；</p>
+<p>mousedown：当用户按下鼠标还未弹起时触发；</p>
+<p>mouseup：当用户释放鼠标按钮时触发；</p>
+<p>mouseover：当鼠标移到某个元素上方时触发；</p>
+<p>mouseout：当鼠标移出某个元素上方时触发；</p>
+<p>mousemove：当鼠标指针在元素上移动时触发；</p>
+<p>mouseenter：在鼠标光标从元素外部首次移动至元素范围内触发，不参与冒泡；</p>
+<p>mouseleave：鼠标移出；</p>
+<p>第二种：键盘事件。</p>
+<p>keydown：当用户按下键盘上任意键时触发，如果按住不放，会重复触发；</p>
+<p>keyup：当用户释放键盘上的键触发；</p>
+<p>keypress：当用户按下键盘上的字符键时触发，如果按住不放，会重复触发；</p>
+<p>第三种：HTML事件。</p>
+<p>load：当页面完全加载后在window上面触发，或当框架集加载完毕后在框架集上触发；</p>
+<p>unload：当页面完全卸载后在window上面触发，或当框架集卸载后在框架集上触发；</p>
+<p>select：当用户选择文本框（input或textarea）中的一个或多个字符触发；</p>
+<p>change：当文本框（input或textarea）内容改变且失去焦点后触发；</p>
+<p>input：输入；</p>
+<p>focus：当页面或者元素获得焦点时在window及相关元素上面触发；</p>
+<p>blur：当页面或元素失去焦点时在window及相关元素上触发；</p>
+<p>submit：当用户点击提交按钮在<form>元素上触发；</form></p>
+<p>reset：当用户点击重置按钮在<form>元素上触发；</form></p>
+<p>resize：当窗口或框架的大小变化时在window或框架上触发；</p>
+<p>scroll：当用户滚动带滚动条的元素时触发；</p>
+<p>以上就是这三种事件类型，千万记住事件之前要加“on”。</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/03/28/JavaScript/" class="article-date">
+  <time datetime="2018-03-28T11:45:40.000Z" itemprop="datePublished">2018-03-28</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/07/24/css/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【学习笔记】层叠样式表 CSS
+        
+      </div>
+    </a>
+  
+  
+    <span id="article-nav-older" class="article-nav-link-wrap older"></span>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <img src="https://s1.hdslb.com/bfs/seed/bplus-common/dynamic-assets/end.png">
+
+      </div>
+    </footer>
+<!--    Copyright  &copy; 2018-2020  luozha  --!>
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

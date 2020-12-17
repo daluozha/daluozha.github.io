@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>【学习笔记】层叠样式表 CSS | luozha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="🌘CSS Position Position 是 CSS 中一个非常重要的属性，它的作用是将元素在网页中定位。设定值分别为：static、absolute、relative、fixed、sticky。  static HTML 里面所有元素的 position 默认值都是 static 。static 会跟随 HTML 排版的流程( flow )移动而且不受偏移量 left、right、top、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】层叠样式表 CSS">
+<meta property="og:url" content="http://www.daluozha.cn/2018/07/24/css/index.html">
+<meta property="og:site_name" content="luozha">
+<meta property="og:description" content="🌘CSS Position Position 是 CSS 中一个非常重要的属性，它的作用是将元素在网页中定位。设定值分别为：static、absolute、relative、fixed、sticky。  static HTML 里面所有元素的 position 默认值都是 static 。static 会跟随 HTML 排版的流程( flow )移动而且不受偏移量 left、right、top、">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-12-13T16:01:04.729Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【学习笔记】层叠样式表 CSS">
+<meta name="twitter:description" content="🌘CSS Position Position 是 CSS 中一个非常重要的属性，它的作用是将元素在网页中定位。设定值分别为：static、absolute、relative、fixed、sticky。  static HTML 里面所有元素的 position 默认值都是 static 。static 会跟随 HTML 排版的流程( flow )移动而且不受偏移量 left、right、top、">
+  
+  
+    <link rel="icon" href="https://raw.githubusercontent.com/daluozha/MyPostImage/master/fav1.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname"></h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h3 class="article-title" itemprop="name">
+      【学习笔记】层叠样式表 CSS
+    </h3>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h3 id="css-position"><a class="header-anchor" href="#css-position">🌘</a>CSS Position</h3>
+<p>Position 是 CSS 中一个非常重要的属性，它的作用是将元素在网页中定位。设定值分别为：static、absolute、relative、fixed、sticky。</p>
+<ol>
+<li><strong>static</strong> HTML 里面所有元素的 position 默认值都是 static 。static 会跟随 HTML 排版的流程( flow )移动而且不受偏移量 left、right、top、bottom 的影响</li>
+<li><strong>absolute</strong> 元素会固定在所设定的位置，不会跟随 HTML 排版的流程移动。但如果 absolute 元素所在的容器有滚动条的话，它就会随着滚动而移动。
+<ul>
+<li>如果将 absolute 元素加入到 absolute 元素里面，里面的元素就会根据外面的元素的位置去定位。</li>
+</ul>
+</li>
+<li><strong>relative</strong> 与 static 很相似，都会跟随 HTML 的排版流程移动，而它比 static 多了 top、left、right、bottom 的设定。即是它跟随 HTML 排版流程去定位之余，还可以透过偏移量去调整位置。
+<ul>
+<li>relative 最重要的一个功能是：在它里面的 absolute 元素会根据 relative 的位置去定位。改成static 则不行，absolute 元素会完全无视 static 的，即使它在 static 里面。</li>
+<li>relative 与 static 比较，主要增加了两大功能：
+<ul>
+<li>具备偏移量的设定</li>
+<li>可以让 absolute 子元素根据它的位置来定位</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>fixed</strong> 与 absolute 很相似，不同的地方有：
+<ul>
+<li>fixed 会定位到屏幕中的固定位置，即使滚动页面也会一直保持在那个位置。</li>
+<li>如果 fixed 元素设定了偏移量，即使放在 relative 里面，fixed 还是会根据页面，即 body 去定位，而不会根据 relative 去定位</li>
+</ul>
+</li>
+<li><strong>sticky</strong> 当设置&quot; top:0 &quot;的时候，滚动页面直至 sticky 贴到顶部，sticky 就会固定在顶部。</li>
+</ol>
+<h3 id="元素置中对齐"><a class="header-anchor" href="#元素置中对齐">🌘</a>元素置中对齐</h3>
+<ul>
+<li>左右居中
+<ol>
+<li>display 属性是 inline 或 inline-block 的时候，将父元素（容器）使用 <strong>text-align:center</strong></li>
+<li>display 属性是 block 的时候， 将元素本身的 <strong>margin-left</strong> 与 <strong>margin-right</strong> 设定为 <strong>auto</strong></li>
+</ol>
+</li>
+<li>上下左右居中
+<ol>
+<li>position: absolute</li>
+</ol>
+<ul>
+<li>top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);</li>
+<li>right: 50%; bottom: 50%; transform: translateX(50%) translateY(-50%);</li>
+</ul>
+<ol start="2">
+<li>Flexbox</li>
+</ol>
+<ul>
+<li>min-height: 100vh; display: flex; justify-content: center; align-items: center;</li>
+</ul>
+<ol start="3">
+<li>Display Table</li>
+</ol>
+<ul>
+<li>display: table-cell; vertical-align: middle;</li>
+</ul>
+</li>
+</ul>
+<h3 id="flex-布局"><a class="header-anchor" href="#flex-布局">🌘</a>Flex 布局</h3>
+<ul>
+<li>Flex Container
+<ol>
+<li>flex-direction: row,column,row-reverse,column-reverse 。当 row 时，main-axis（主轴）就是 row 、cross-axis（交叉轴）是 column。</li>
+<li>justify-content &amp; align-items: 设定主轴 &amp; 交叉轴的排序方向。有 center、flex-start、flex-end</li>
+<li>flex-wrap: 设定flex-items是否分行。有 nowrap、wrap</li>
+<li>flex-flow = flex-direction + flex-wrap</li>
+<li>align-content: 当 flex-wrap为 wrap 并且有多于一行的 flex-items 时，设定行与行之间的对齐方式。有flex-start、flex-end、center、space-around（左右都有相同的空间隔开）、space-evenly（之间有相同的间距）、space-between（之间有相同间距，但是取消最左和最右的空间）。</li>
+</ol>
+</li>
+<li>Flex Item
+<ol>
+<li>order: 调整 flex-items 的排序位置，预设值为0，根据 order 由小到大排列。注意：flex-items 在 HTML 内的位置并不代表最终显示的位置，因为 order 可以随意将个别 flex-item 的位置改变。</li>
+<li>align-self: 用于覆写 flex-container 的 align-items 设定。</li>
+<li>flex-basis: 设定 flex-item 主轴方向上的大小。在设定 flex-basis 之后，原有的宽度或者高度设定就会失效，改为按照 flex-basis 的设定值去计算。设定为 0 则等同于 width 是 0 的效果，只要容器本身没有 overflow:hidden 的设定，即等于它的大小取决于内容的大小。设定为 auto 则代表按照本身原有宽度或者高度的大小去计算</li>
+<li>flex-grow: 当 flex-container 主轴方向有剩余空间的时候，flex-item 沿主轴方向扩大的设定。设定为数值，是 flex-item 占几份的意思，分母是剩余空间的大小；0表示保持原有的大小不扩大。</li>
+<li>flex-shrink: 与 flex-grow 相反，是指 flex-item 主轴方向的大小总和超出了 flex-container 的时候，flex-item 沿主轴方向怎样缩小的设定。设定为数值，表示各自分担几份被缩小的空间，分母是超出空间的大小；0表示不缩小。</li>
+<li>flex = ( flex-grow + flex-shrink + flex-basis )</li>
+</ol>
+</li>
+<li>感谢 Coding Startup 🤗</li>
+</ul>
+<h3 id="grid-布局"><a class="header-anchor" href="#grid-布局">🌘</a>Grid 布局</h3>
+<ul>
+<li>Flexbox 属于一维的排版方式，一个 Flexbox 容器只能控制一个方向，即水平或垂直方向，如果需要控制另一方向则需要再添加一层 Flexbox 容器。而 Grid 属于二维的排版方式，Grid 容器则可以同时控制两个方向，这样就可以直接定义容器内元素的位置。</li>
+<li></li>
+</ul>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/07/24/css/" class="article-date">
+  <time datetime="2018-07-24T10:18:29.000Z" itemprop="datePublished">2018-07-24</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/11/26/卡莎/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【个人向】DAUGHTER OF THE VOID
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/28/JavaScript/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【学习笔记】JavaScript</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <img src="https://s1.hdslb.com/bfs/seed/bplus-common/dynamic-assets/end.png">
+
+      </div>
+    </footer>
+<!--    Copyright  &copy; 2018-2020  luozha  --!>
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>

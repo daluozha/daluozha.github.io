@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>【JS框架】Vue.js | luozha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="🌘Vue.js 官方文档&amp;lt;https://cn.vuejs.org/ &amp;gt;  组件 component    全局调用   1234Vue.component(&amp;apos;todoitem1&amp;apos;, &amp;#123;	props:[&amp;apos;content&amp;apos;],    template: &amp;quot;&amp;lt;li&amp;gt;这是组件的全局调用&amp;lt;/li&amp;gt;&amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【JS框架】Vue.js">
+<meta property="og:url" content="http://www.daluozha.cn/2020/03/19/Vue/index.html">
+<meta property="og:site_name" content="luozha">
+<meta property="og:description" content="🌘Vue.js 官方文档&amp;lt;https://cn.vuejs.org/ &amp;gt;  组件 component    全局调用   1234Vue.component(&amp;apos;todoitem1&amp;apos;, &amp;#123;	props:[&amp;apos;content&amp;apos;],    template: &amp;quot;&amp;lt;li&amp;gt;这是组件的全局调用&amp;lt;/li&amp;gt;&amp;quot;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-12-13T16:01:04.729Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【JS框架】Vue.js">
+<meta name="twitter:description" content="🌘Vue.js 官方文档&amp;lt;https://cn.vuejs.org/ &amp;gt;  组件 component    全局调用   1234Vue.component(&amp;apos;todoitem1&amp;apos;, &amp;#123;	props:[&amp;apos;content&amp;apos;],    template: &amp;quot;&amp;lt;li&amp;gt;这是组件的全局调用&amp;lt;/li&amp;gt;&amp;quot;">
+  
+  
+    <link rel="icon" href="https://raw.githubusercontent.com/daluozha/MyPostImage/master/fav1.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-Vue" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname"></h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h3 class="article-title" itemprop="name">
+      【JS框架】Vue.js
+    </h3>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h2 id="vue-js"><a class="header-anchor" href="#vue-js">🌘</a>Vue.js</h2>
+<p>官方文档&lt;<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">https://cn.vuejs.org/</a> &gt;</p>
+<ol>
+<li>组件 component</li>
+</ol>
+<ul>
+<li>
+<p>全局调用</p>
+<ul>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;todoitem1&apos;, &#123;</span><br><span class="line">	props:[&apos;content&apos;],</span><br><span class="line">    template: &quot;&lt;li&gt;这是组件的全局调用&lt;/li&gt;&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在挂载点直接使用 &lt;todoitem1&gt; 标签</p>
+</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;todoitem1 v-for=&quot;(item,index) of list&quot; :key=&quot;index&quot; :content=&quot;item&quot;&gt;</span><br><span class="line">&lt;/todoitem1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>局部调用</p>
+<ul>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var todoitem2=&#123;</span><br><span class="line">      template:&apos;&lt;li&gt;这是局部调用&lt;/li&gt;&apos;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>使用 &lt;todoitem2&gt; 之前要在 Vue( ) 里做一个声明</p>
+</li>
+<li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var daluozha = new Vue(&#123;</span><br><span class="line">        el: &quot;#daluozha&quot;,</span><br><span class="line">        components:&#123;</span><br><span class="line">        &apos;todoitem2&apos;:todoitem2,</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>
+<p>组件与实例的关系</p>
+<ul>
+<li>Vue( ) 是一个 Vue 的实例，没有定义 template 的话，模板就是挂载点，即 daluozha 类的 div</li>
+<li>每一个 Vue.component 也都是一个 Vue 的实例，可以写上 methods、computed</li>
+<li>最外层的 Vue( ) 实例是父组件，里面的 Vue.component 即为子组件。通过标签属性的形式给子组件传递了内容，而子组件通过 props 接收，完成值的传递。</li>
+<li>子组件可以通过 this.$emit(del,this.index) 自定义事件，父组件模板的标签监听 del 事件： @del=“handelDel”，将子组件的事件送回父组件的 methods 里的 handleDel 函数进行处理。</li>
+</ul>
+</li>
+<li>
+<p>this.$set( )</p>
+<ul>
+<li>当生成vue实例后，当再次给数据赋值时，有时候并不会自动更新到视图上去； 当我们去看vue文档的时候，会发现有这么一句话：如果在实例创建之后添加新的属性到实例上，它不会触发视图更新。 如下代码，给 student对象新增 age 属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">data () &#123; </span><br><span class="line">  return &#123; </span><br><span class="line">      student: &#123; </span><br><span class="line">      name: &apos;&apos;, </span><br><span class="line">      sex: &apos;&apos; </span><br><span class="line">      &#125; </span><br><span class="line">  &#125; </span><br><span class="line">&#125; </span><br><span class="line">mounted () &#123; </span><br><span class="line">  // ——钩子函数，实例挂载之后 </span><br><span class="line">  this.student.age = 24 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>受 ES5 的限制，Vue.js 不能检测到对象属性的添加或删除。因为Vue.js 在初始化实例时将属性转为 getter/setter，所以属性必须在data 对象上才能让 Vue.js 转换它，才能让它是响应的。正确写法：this.$set(this.data,”key”,value’)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mounted () &#123;</span><br><span class="line">  this.$set(this.student,&quot;age&quot;, 24)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>组件之间通信<br>
+如果你想要将一个对象的所有 property 都作为 prop 传入，你可以使用不带参数的 v-bind (取代 v-bind:prop-name)。例如，对于一个给定的对象 post：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post: &#123;</span><br><span class="line">  id: 1,</span><br><span class="line">  title: &apos;My Journey with Vue&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面的模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post v-bind=&quot;post&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:id=&quot;post.id&quot;</span><br><span class="line">  v-bind:title=&quot;post.title&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2020/03/19/Vue/" class="article-date">
+  <time datetime="2020-03-18T17:04:51.000Z" itemprop="datePublished">2020-03-19</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2020/05/16/支付宝小程序/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【学习笔记】支付宝小程序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/21/Git/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【学习笔记】Git</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <img src="https://s1.hdslb.com/bfs/seed/bplus-common/dynamic-assets/end.png">
+
+      </div>
+    </footer>
+<!--    Copyright  &copy; 2018-2020  luozha  --!>
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
